@@ -1,0 +1,6 @@
+alias vm="vagrant"
+alias vup="vm up"
+
+alias art="php artisan"
+alias amc="art make:controller"
+alias migs="art migrate --seed"
