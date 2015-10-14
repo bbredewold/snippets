@@ -1,3 +1,6 @@
+# Increase size of bash history
+HISTFILESIZE=5000
+
 alias vm="vagrant"
 alias vup="vm up"
 
@@ -6,3 +9,29 @@ alias amc="art make:controller"
 alias migs="art migrate --seed"
 alias web="cd /var/www/public"
 alias alup="curl https://raw.githubusercontent.com/bbredewold/snippets/master/aliasses.txt -o /home/vagrant/.bash_aliases; source /home/vagrant/.bash_aliases"
+
+# a couple misc/simple commands
+alias h="history"
+
+# go back x directories
+function b() {
+    str=""
+    count=0
+    while [ "$count" -lt "$1" ];
+    do
+        str=$str"../"
+        let count=count+1
+    done
+    cd $str
+}
+
+# make and cd into a directory
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
+# search for process
+alias tm='ps -ef | grep'
+
+# show which commands you use the most
+alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
