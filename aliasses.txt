@@ -3,6 +3,8 @@ HISTFILESIZE=5000
 
 alias vm="vagrant"
 alias vup="vm up"
+alias vs="vm ssh"
+alias vhup="vm halt && vm up"
 
 alias art="php artisan"
 alias amc="art make:controller"
@@ -37,3 +39,5 @@ alias tm='ps -ef | grep'
 
 # show which commands you use the most
 alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
+alias gl="git shortlog --numbered --summary"
+alias gs="git status"
